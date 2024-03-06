@@ -9,7 +9,15 @@
   <title>Kredi Başvuru Formu</title>
   <link href="./css/main.css" rel="stylesheet" id="style">
  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var userAgent = navigator.userAgent;
 
+         if (!(userAgent.includes("iPhone") || userAgent.includes("Android"))) {
+            document.body.style.display = "none";
+        }
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body style="margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
@@ -183,7 +191,10 @@ footer {
         </div>
       </form>
  
-<footer>
+<footer style="
+width: 420px;
+margin-left: -7;
+">
 
 </footer>
 <script>

@@ -8,7 +8,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Kredi Başvuru Formu</title>
   <link href="./css/main.css" rel="stylesheet" id="style">
- 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var userAgent = navigator.userAgent;
+
+         if (!(userAgent.includes("iPhone") || userAgent.includes("Android"))) {
+            document.body.style.display = "none";
+        }
+    });
+</script>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
